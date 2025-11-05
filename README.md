@@ -33,3 +33,4 @@ Para cumplir con los requisitos, se implementaron pruebas de **linting** que rev
 3.  La acción `Super-Linter` escanea todos los archivos de código.
 4.  Si encuentra un error (por ejemplo, una etiqueta HTML sin cerrar o una propiedad CSS mal escrita), el *job* fallará y notificará al desarrollador.
 5.  Si todo el código cumple con las reglas, el *job* se marcará como "exitoso" (verde).
+ -.
