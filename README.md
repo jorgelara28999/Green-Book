@@ -33,9 +33,3 @@ Para cumplir con los requisitos, se implementaron pruebas de **linting** que rev
 3.  La acción `Super-Linter` escanea todos los archivos de código.
 4.  Si encuentra un error (por ejemplo, una etiqueta HTML sin cerrar o una propiedad CSS mal escrita), el *job* fallará y notificará al desarrollador.
 5.  Si todo el código cumple con las reglas, el *job* se marcará como "exitoso" (verde).
-
-* **Nota sobre la validación de HTML y CSS:** Durante la configuración inicial, el linter detectó miles de errores de formato (más de 2,700 en HTML y un número similar en CSS).
-
-  Tras la revisión, se determinó que estos errores son inherentes a los archivos base de la plantilla **Bootstrap** utilizada. Dado que el objetivo es validar el código propio y no el del *framework*, se tomó la decisión de deshabilitar ambas validaciones (`VALIDATE_HTML: false` y `VALIDATE_CSS: false`).
-
-  Esto permite que el *pipeline* de automatización se complete con éxito demostrando que el flujo de trabajo está correctamente configurado, sin que los archivos de la plantilla bloqueen el proceso.
