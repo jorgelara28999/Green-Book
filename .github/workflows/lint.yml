@@ -1,0 +1,23 @@
+name: Code Linter
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-code:
+    name: Run Linter
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Run Super-Linter
+        uses: github/super-linter@v5
+        env:
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
