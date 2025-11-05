@@ -1,0 +1,28 @@
+name: Lint HTML y CSS
+
+# Esto le dice a GitHub cuándo debe ejecutarse
+on:
+  push: # Se ejecuta cada vez que subes código (git push)
+    branches: [ main, master ] # Ajusta esto al nombre de tu rama principal
+  pull_request: # También cuando alguien te envía un "pull request"
+    branches: [ main, master ]
+
+jobs:
+  lint-code:
+    name: Revisar Código (Linting)
+    runs-on: ubuntu-latest # Usará una máquina virtual de Linux
+
+    steps:
+      # 1. Descarga tu código en la máquina virtual
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # 2. Esta es la "magia": usa una herramienta llamada Super-Linter
+      - name: Run Super-Linter
+        uses: github/super-linter@v5
+        env:
+          VALIDATE_HTML: true  # Le decimos que SÍ revise HTML
+          VALIDATE_CSS: true   # Le decimos que SÍ revise CSS
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
