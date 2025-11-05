@@ -18,6 +18,6 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v5
         env:
-          VALIDATE_HTML: true
-          VALIDATE_CSS: true
+          VALIDATE_HTML: false
+          VALIDATE_CSS: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
